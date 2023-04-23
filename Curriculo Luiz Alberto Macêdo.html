@@ -1,0 +1,255 @@
+<head>
+  <title>Curriculum Vitae</title>
+  <script>
+    function criarClassificacao(skill, numEstrelas) {
+      let html = '<li style="font-size: 1.2em">' + skill;
+
+      for (let i = 1; i <= numEstrelas; i++) {
+        html +=
+          '<span style="font-size:100%; color:#e99700; padding: 0.1em">&starf;</span>';
+      }
+
+      for (let i = numEstrelas + 1; i <= 5; i++) {
+        html +=
+          '<span style="font-size:100%; color:#e99700; padding: 0.1em">&star;</span>';
+      }
+
+      html += "</li>";
+      return html;
+    }
+  </script>
+  <style>
+    .pagina {
+      position: relative;
+      width: 70em;
+      padding-top: 3em;
+      background-color: #dbdbdb;
+      border: 3px solid black;
+      margin: auto;
+      margin-top: 1em;
+    }
+    .secao-inicial {
+      width: 62.5em;
+      float: right;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      display: flex;
+      flex-direction: row;
+    }
+    .apresentacao {
+      margin: auto;
+      text-align: center;
+    }
+    .coluna-esquerda-25 {
+      float: left;
+      height: 27em;
+      display: inline-block;
+      width: 25%;
+    }
+    .coluna-direita-75 {
+      float: left;
+      width: 75%;
+      display: inline-block;
+    }
+    .coluna-esquerda-50 {
+      height: 27em;
+      display: inline-block;
+      width: 50%;
+    }
+    .coluna-direita-50 {
+      width: 50%;
+      display: inline-block;
+    }
+    .bloco-cinza-top {
+      background-color: #545454;
+      padding-left: 6em;
+      padding-right: 5.5em;
+      padding-top: 0.1em;
+      padding-bottom: 0.6em;
+      line-height: 2em;
+      color: #ffffff;
+      text-align: justify;
+    }
+    .bloco-cinza-baixo {
+      background-color: #545454;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      padding-left: 30em;
+      padding-right: 5.5em;
+      padding-top: 5em;
+      padding-bottom: 0.4em;
+    }
+    .secao-segunda {
+      width: 55em;
+      margin: auto;
+      margin-top: 5em;
+      padding-top: 2em;
+      padding-bottom: 15em;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      display: flex;
+      flex-direction: row;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.6em;
+    }
+    .sub-texto {
+      font-size: 1.1em;
+      line-height: 0.5em;
+      padding-left: 0.5em;
+    }
+  </style>
+</head>
+<body style="background-color: #f0f0f0">
+  <div class="pagina">
+    <div class="secao-inicial">
+      <div class="coluna-esquerda-25">
+        <img src="Imagens/Foto-em-Londres2-01.jpeg" width="100%" />
+      </div>
+      <div class="coluna-direita-75">
+        <div class="apresentacao">
+          <h1>Luiz Alberto Macêdo</h1>
+          <h2 style="margin-top: -0.5em">Assessor de Comercial</h2>
+        </div>
+        <div class="bloco-cinza-top">
+          <h3 style="font-size: 2em">PERFIL</h3>
+          <p style="font-size: 1.2em">
+            Alma de turista e espírito aventureiro são traços que acompanham
+            minha caminhada desde o berço. Meio potiguar e meio brasiliense, sou
+            uma pessoa que está sempre atrás de novos desafios e novas
+            experiências. Dessa forma, busco entregar meu melhor em toda
+            atividade que vem pela frente
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="secao-segunda">
+      <div class="coluna-esquerda-50">
+        <h3 style="font-size: 2em; padding-left: 1.5em">CONTATO</h3>
+        <section>
+          <a href="https://wa.me/+5561991476220" target="_blank">
+            <img
+              src="Imagens/telefone-icone.png"
+              style="float: left; width: 2em; padding-right: 1em"
+            />
+            <p style="font-size: 1.1em">(61) 99147-6220</p>
+          </a>
+          <a href="mailto:luiz.macedo@engnetconsultoria.com.br" target="_blank">
+            <img
+              src="Imagens/email-icone.png"
+              style="float: left; width: 2em; padding-right: 1em"
+            />
+            <p style="font-size: 1.1em">luiz.macedo@engnetconsultoria.com.br</p>
+          </a>
+          <a href="https://github.com/luiz-alberto-macedo" target="_blank">
+            <img
+              src="Imagens/github-icone.png"
+              style="float: left; width: 2em; padding-right: 1em"
+            />
+            <p style="font-size: 1.1em">luiz-alberto-macedo</p>
+          </a>
+        </section>
+        <h3 style="font-size: 2em; padding-left: 0.8em; margin-top: 1.4em">
+          HARD SKILLS
+        </h3>
+        <section>
+          <ul id="rating_list">
+            <script>
+              let dict_skills = {
+                "HTML: ": 4,
+                "CSS: ": 3,
+                "JavaScript: ": 3,
+                "Figma: ": 3,
+                "Git: ": 2,
+                "Banco de Dados: ": 1,
+                "React: ": 1,
+              };
+
+              let rating_list = document.getElementById("rating_list");
+              for (const [skill, numEstrelas] of Object.entries(dict_skills)) {
+                rating_list.innerHTML += criarClassificacao(skill, numEstrelas);
+              }
+            </script>
+          </ul>
+        </section>
+        <h3 style="font-size: 2em; padding-left: 1.1em; margin-top: 1em">
+          FORMAÇÃO
+        </h3>
+        <section>
+          <p style="font-size: 1.3em; font-weight: bold">
+            Ensino Médio Completo
+          </p>
+          <p class="sub-texto"><b>Local: </b>Colégio Dromos</p>
+          <p class="sub-texto"><b>Média Geral: </b>9.8</p>
+          <p class="sub-texto" style="font-weight: lighter">
+            Janeiro de 2018 a Dezembro de 2020
+          </p>
+
+          <p style="font-size: 1.3em; font-weight: bold">
+            Ensino Superior Cursando - Engenharia Elétrica
+          </p>
+          <p class="sub-texto"><b>Local: </b>Universidade de Brasília (UnB)</p>
+          <p class="sub-texto"><b>IRA: </b>4.4</p>
+          <p class="sub-texto" style="font-weight: lighter">
+            Julho de 2021 a Data Atual
+          </p>
+        </section>
+      </div>
+      <div class="coluna-direita-50">
+        <h3 style="font-size: 2em">EXPERIÊNCIA</h3>
+        <section>
+          <p class="sub-texto" style="padding-left: 0">
+            <b>Voluntário pelo IEEE</b>
+          </p>
+          <p class="sub-texto" style="padding-left: 0; font-weight: lighter">
+            Setembro de 2021 a Data Atual
+          </p>
+          <li style="padding-left: 1em">
+            Serviço voluntário pelo Ramo Estudantil IEEE da UnB e pelo Capítulo
+            Estudantil IEEE RAS UnB voltado para o ensino de robótica para
+            jovens.
+          </li>
+          <li style="padding-left: 1em">
+            Desenvolvimento de pesquisa sobre aplicações de mineração de dados e
+            inteligência artificial para a atenuação da evasão acadêmica
+          </li>
+
+          <p class="sub-texto" style="padding-left: 0; padding-top: 1em">
+            <b>PIBIC na área de Sistemas de Potência</b>
+          </p>
+          <p class="sub-texto" style="padding-left: 0; font-weight: lighter">
+            Outubro de 2022 a Data Atual
+          </p>
+          <li style="padding-left: 1em">
+            Desenvolvimento de metodologia para estimação de estados em redes de
+            distribuição de energia baseada no emprego de técnicas de machine
+            learning
+          </li>
+
+          <p class="sub-texto" style="padding-left: 0; padding-top: 1em">
+            <b>Membro-Voluntário na Empresa Jr. EngNet</b>
+          </p>
+          <p class="sub-texto" style="padding-left: 0; font-weight: lighter">
+            Agosto de 2022 a Data Atual
+          </p>
+          <li style="padding-left: 1em">
+            Responsável pelo setor de comercial da empresa. Organização do
+            Marketing, contato com o cliente, análise de viabilidade e
+            precificação de projetos, apresentação de proposta, confecção de
+            contrato e negociação.
+          </li>
+          <li style="padding-left: 1em">
+            Gerência e participação em projetos de WordPress. Responsável por
+            liderar e organizar a equipe, confeccionar Backlog e Escopo, manter
+            contato com o cliente e fazer acompanhamento do projeto.
+          </li>
+        </section>
+        <div class="bloco-cinza-baixo"></div>
+      </div>
+    </div>
+  </div>
+</body>
